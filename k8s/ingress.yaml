@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test-kairo
+  namespace: kairo-test-kairo
+  labels:
+    app: test-kairo
+    app.kubernetes.io/managed-by: kairo
+spec:
+  # Traefik is the only way in. It answers on localhost:80, and the app's
+  # public link (a Cloudflare tunnel) points at it with this Host header
+  ingressClassName: traefik
+  rules:
+    - host: test-kairo.kairo.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: test-kairo
+                port:
+                  number: 80
