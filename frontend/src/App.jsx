@@ -1,3 +1,5 @@
+throw new error("Broke on purpose");
+
 import { useEffect, useState } from 'react';
 
 // every call goes to /api on the same address the page came from
