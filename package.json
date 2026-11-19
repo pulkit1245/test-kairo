@@ -1,0 +1,13 @@
+{
+  "name": "kairo-demo-tasks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A small task board: React + Vite frontend, Express API, one container.",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "build": "npm --prefix frontend ci && npm --prefix frontend run build && rm -rf frontend/node_modules && npm --prefix backend ci --omit=dev",
+    "start": "exec node backend/server.js"
+  }
+}

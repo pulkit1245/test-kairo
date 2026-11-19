@@ -1,0 +1,176 @@
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --text: #1c2430;
+  --muted: #6b7380;
+  --line: #e3e6ea;
+  --accent: #2f6fed;
+  --accent-text: #ffffff;
+  --danger: #c8372d;
+  color-scheme: light dark;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12151a;
+    --card: #1b2028;
+    --text: #e8ebef;
+    --muted: #949ba6;
+    --line: #2b313b;
+    --accent: #5b8ff5;
+    --danger: #ef6a60;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.board {
+  max-width: 560px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 28px;
+}
+
+.count {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.add {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 16px;
+}
+
+.add input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.add button {
+  padding: 0 20px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.error {
+  margin: 0 0 12px;
+  color: var(--danger);
+  font-size: 14px;
+}
+
+.tasks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tasks li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--line);
+}
+
+.tasks li:first-child {
+  border-top: 0;
+}
+
+.tasks label {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.tasks input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.tasks span {
+  overflow-wrap: anywhere;
+}
+
+.tasks li.done span {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.delete {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 22px;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: var(--danger);
+  background: var(--bg);
+}
+
+.empty {
+  color: var(--muted);
+  justify-content: center;
+}
+
+footer {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
