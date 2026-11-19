@@ -9,5 +9,9 @@
   "scripts": {
     "build": "npm --prefix frontend ci && npm --prefix frontend run build && rm -rf frontend/node_modules && npm --prefix backend ci --omit=dev",
     "start": "exec node backend/server.js"
+  },
+  "dependencies": {
+    "lodash": "4.17.15",
+    "minimist": "1.2.0"
   }
 }
