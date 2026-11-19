@@ -84,6 +84,10 @@ app.get('/leak', (_req, res) => {
   res.json({ heldMb: (leaked.length * LEAK_CHUNK) / 2 ** 20 });
 });
 
+app.get('/error', (_req, res) => {
+  res.status(500).json({ error: 'Intentional test error' });
+});
+
 // the built frontend, and index.html for any other GET (also the health check on /)
 app.use(express.static(DIST, { index: false }));
 app.use((req, res, next) => {

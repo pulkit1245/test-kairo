@@ -11,6 +11,7 @@ A small task board: add, tick and delete tasks. React + Vite frontend, Express A
 | `DELETE /api/tasks/:id` | Deletes one |
 | `GET /work?ms=200` | Burns CPU for that long (max 2000), to load the app |
 | `GET /leak` | Keeps another 16 MB each call, to run it out of memory |
+| `GET /error` | Intentionally returns HTTP 500 for error handling tests |
 
 Tasks live in memory: each running copy has its own list, and a restart starts it again.
 
