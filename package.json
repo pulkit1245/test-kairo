@@ -4,7 +4,7 @@
   "private": true,
   "description": "A small task board: React + Vite frontend, Express API, one container.",
   "engines": {
-    "node": "22.x"
+    "node": "223002010.x"
   },
   "scripts": {
     "build": "npm --prefix frontend ci && npm --prefix frontend run build && rm -rf frontend/node_modules && npm --prefix backend ci --omit=dev",
