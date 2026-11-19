@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-kairo
+  namespace: kairo-test-kairo
+  labels:
+    app: test-kairo
+    app.kubernetes.io/managed-by: kairo
+spec:
+  # cluster-internal only: all outside traffic comes in through Traefik's
+  # Ingress, so request metrics are always counted
+  type: ClusterIP
+  selector:
+    app: test-kairo
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3000
